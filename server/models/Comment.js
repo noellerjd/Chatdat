@@ -9,6 +9,16 @@ const commentSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
+  thoughtAuthor: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
+  },
 });
 
 const Thought = model("Thought", thoughtSchema);
