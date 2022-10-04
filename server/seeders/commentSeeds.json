@@ -1,0 +1,26 @@
+[
+  {
+    "commentText": "Hello World!",
+    "commentAuthor": "John Doe"
+  },
+  {
+    "commentText": "It's not a bug; it's an undocumented feature.",
+    "commentAuthor": "Jane Doe"
+  },
+  {
+    "commentText": "The most important property of a program is whether it accomplishes the intention of its user.",
+    "commentAuthor": "Jake Doe"
+  },
+  {
+    "commentText": "The most disastrous thing that you can ever learn is your first programming language.",
+    "commentAuthor": "Julia Doe"
+  },
+  {
+    "commentText": "Hello world again!",
+    "commentAuthor": "John Doe"
+  },
+  {
+    "commentText": "Test",
+    "commentAuthor": "Jane Doe"
+  }
+]
