@@ -33,7 +33,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   db.once("open", () => {
     app.listen(PORT, () => {
       console.log(`ChatDat API server running on ${PORT}`);
-      console.log(`GraphQL at https://localhost:${PORT}${server.graphqlPath}`);
+      console.log(`GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
   });
 };
