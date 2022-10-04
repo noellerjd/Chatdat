@@ -17,7 +17,7 @@ const Login = (props) => {
         [name]: value,
       });
     };
-
+  
     const handleFormSubmit = async (event) => {
       event.preventDefault();
       console.log(formState);
@@ -36,4 +36,11 @@ const Login = (props) => {
         password: '',
       });
     };
+
+    return (
+        // add the html for the front end desgin of the login page
+    )
   
+  };
+
+export default Login;
