@@ -2,13 +2,16 @@ import React from "react";
 import Headers from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import { ApolloClient } from "@apollo/client";
 
 function App() {
   return (
     <div className="App">
       <Headers />
-      <Main />
-      <Footer />
+      <ApolloClient>
+        <Main />
+        <Footer />
+      </ApolloClient>
     </div>
   );
 }

@@ -19,17 +19,18 @@ export default function Subject() {
     search();
   }, []);
 
-  // var results = [];
-  // for (let i = 0; i < searchResult.data.children.length; i++) {
-  //   results += searchResult.data.children[i].data.title;
-  // }
   console.log(searchResult);
 
   return (
     <div style={{ border: "1px solid purple", width: "100%" }}>
-      This will be for the subject area where search is perform and rendered
-      {searchResult.slice(0, 15).map((result) => (
-        <p>{result.data.title}</p>
+      {searchResult.slice(0, 8).map((result) => (
+        <div style={{ border: "1px solid purple" }}>
+          <a href={result.data.url} target="_blank">
+            <p>{result.data.title}</p>
+          </a>
+          <button style={{ border: "1px solid purple" }}>SkipDat</button>
+          <button style={{ border: "1px solid purple" }}>ChatDat</button>
+        </div>
       ))}
     </div>
   );
