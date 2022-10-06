@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
-import auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -33,7 +32,7 @@ const Signup = () => {
         variables: { ...formState },
       });
 
-      auth.login(data.addUser.token);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.log(e);
     }
@@ -90,3 +89,5 @@ const Signup = () => {
     </main>
   );
 };
+
+export default Signup;
