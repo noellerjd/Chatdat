@@ -32,6 +32,11 @@ export default function Subject() {
           <button style={{ border: "1px solid purple" }}>ChatDat</button>
         </div>
       ))}
+      <h1>Line</h1>
+      {searchResult.slice(5, 10).map((result) => (
+        <p>{result.data.title}</p>
+      ))}
+      <button>Share</button>
     </div>
   );
 }
