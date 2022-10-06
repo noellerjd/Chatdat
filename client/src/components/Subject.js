@@ -28,9 +28,14 @@ export default function Subject() {
   return (
     <div style={{ border: "1px solid purple", width: "100%" }}>
       This will be for the subject area where search is perform and rendered
-      {searchResult.slice(0, 15).map((result) => (
+      {searchResult.slice(0, 5).map((result) => (
         <p>{result.data.title}</p>
       ))}
+      <h1>Line</h1>
+      {searchResult.slice(5, 10).map((result) => (
+        <p>{result.data.title}</p>
+      ))}
+      <button>Share</button>
     </div>
   );
 }
