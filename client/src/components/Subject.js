@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Button,
+  Typography,
+  Stack,
+} from "@mui/material/";
+// import { resultKeyNameFromField } from "@apollo/client/utilities";
 export default function Subject() {
   const [searchResult, setSearchResult] = useState([]);
 
@@ -22,21 +31,28 @@ export default function Subject() {
   console.log(searchResult);
 
   return (
-    <div style={{ border: "1px solid purple", width: "100%" }}>
-      {searchResult.slice(0, 8).map((result) => (
-        <div style={{ border: "1px solid purple" }}>
-          <a href={result.data.url} target="_blank">
-            <p>{result.data.title}</p>
-          </a>
-          <button style={{ border: "1px solid purple" }}>SkipDat</button>
-          <button style={{ border: "1px solid purple" }}>ChatDat</button>
-        </div>
-      ))}
-      <h1>Line</h1>
-      {searchResult.slice(5, 10).map((result) => (
-        <p>{result.data.title}</p>
-      ))}
-      <button>Share</button>
-    </div>
+    <Stack>
+      {searchResult.slice(0, 8).map((result) => {
+        return (
+          <Card spacing={2} sx={{ minWidth: 275 }}>
+            <CardContent>
+              <Typography
+                sx={{ fontSize: 14 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                {result.data.title}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant="outlined" size="small">
+                Do you want to chat dat
+              </Button>
+            </CardActions>
+          </Card>
+        );
+      })}
+      ;
+    </Stack>
   );
 }
