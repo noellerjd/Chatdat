@@ -1,4 +1,19 @@
 import React, { useState, useEffect } from "react";
+import Grid from "@mui/material/Unstable_Grid2";
+
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Button,
+  Typography,
+  CardMedia,
+} from "@mui/material/";
+import javascriptBubble from "./images/javascript.png";
+import expressBubble from "./images/express.png";
+import mongoDbBubble from "./images/mongodb.png";
+import nodeJsBubble from "./images/nodejs.png";
+import reactBubble from "./images/react.png";
 
 export default function Subject() {
   const [searchResult, setSearchResult] = useState([]);
@@ -19,23 +34,46 @@ export default function Subject() {
     search();
   }, []);
 
-  // var results = [];
-  // for (let i = 0; i < searchResult.data.children.length; i++) {
-  //   results += searchResult.data.children[i].data.title;
-  // }
-  console.log(searchResult);
-
   return (
-    <div style={{ border: "1px solid purple", width: "100%" }}>
-      This will be for the subject area where search is perform and rendered
-      {searchResult.slice(0, 5).map((result) => (
-        <p>{result.data.title}</p>
-      ))}
-      <h1>Line</h1>
-      {searchResult.slice(5, 10).map((result) => (
-        <p>{result.data.title}</p>
-      ))}
-      <button>Share</button>
-    </div>
+    <Grid container sx={{ flexGrow: 1 }}>
+      {searchResult.slice(0, 8).map((result) => {
+        return (
+          <Card
+            margin="normal"
+            spacing={2}
+            sx={{ maxWidth: 345 }}
+            style={{
+              margin: 15,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <CardMedia
+              item
+              xs={6}
+              md={8}
+              component="img"
+              alt="javascript"
+              height="auto"
+              image={javascriptBubble}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {result.data.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {result.data.selfText}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="large">Skip Dat ❌</Button>
+              <Button size="large">Chat Dat ✔</Button>
+            </CardActions>
+          </Card>
+        );
+      })}
+    </Grid>
   );
 }

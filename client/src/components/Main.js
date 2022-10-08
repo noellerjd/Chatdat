@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Auth from "../utils/auth";
 
 export default function Main() {
+
   if (Auth.loggedIn()) {
     return (
       <div
@@ -23,4 +24,5 @@ export default function Main() {
       </div>
     );
   }
+
 }
