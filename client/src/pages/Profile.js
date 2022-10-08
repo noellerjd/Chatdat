@@ -15,7 +15,7 @@ const Profile = () => {
 
   const user = data?.me || data?.user || {};
 
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  if (Auth.loggedIn() && Auth.getProfile().data.username === useParam) {
     return <Navigate to="/me" />;
   }
 
