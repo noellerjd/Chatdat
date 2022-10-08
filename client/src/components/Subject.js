@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Grid from "@mui/material/Unstable_Grid2";
 
 import {
   Card,
@@ -6,9 +7,14 @@ import {
   CardContent,
   Button,
   Typography,
-  Stack,
+  CardMedia,
 } from "@mui/material/";
-// import { resultKeyNameFromField } from "@apollo/client/utilities";
+import javascriptBubble from "./images/javascript.png";
+import expressBubble from "./images/express.png";
+import mongoDbBubble from "./images/mongodb.png";
+import nodeJsBubble from "./images/nodejs.png";
+import reactBubble from "./images/react.png";
+
 export default function Subject() {
   const [searchResult, setSearchResult] = useState([]);
 
@@ -28,31 +34,46 @@ export default function Subject() {
     search();
   }, []);
 
-  console.log(searchResult);
-
   return (
-    <Stack>
+    <Grid container sx={{ flexGrow: 1 }}>
       {searchResult.slice(0, 8).map((result) => {
         return (
-          <Card spacing={2} sx={{ minWidth: 275 }}>
+          <Card
+            margin="normal"
+            spacing={2}
+            sx={{ maxWidth: 345 }}
+            style={{
+              margin: 15,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <CardMedia
+              item
+              xs={6}
+              md={8}
+              component="img"
+              alt="javascript"
+              height="auto"
+              image={javascriptBubble}
+            />
             <CardContent>
-              <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
-                gutterBottom
-              >
+              <Typography gutterBottom variant="h5" component="div">
                 {result.data.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {result.data.selfText}
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small">
-                Do you want to chat dat
-              </Button>
+              <Button size="large">Skip Dat ❌</Button>
+              <Button size="large">Chat Dat ✔</Button>
             </CardActions>
           </Card>
         );
       })}
-      ;
-    </Stack>
+    </Grid>
   );
 }

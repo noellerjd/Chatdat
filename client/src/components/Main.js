@@ -4,7 +4,7 @@ import Subject from "./Subject";
 import Signup from "../pages/Signup";
 export default function Main() {
   return (
-    <div style={{ border: "1px solid red", height: "700px", display: "flex" }}>
+    <div style={{ border: "1px solid red", height: "100vh", display: "flex" }}>
       <Chatbox />
       <Subject />
       <Signup />
