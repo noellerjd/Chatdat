@@ -8,11 +8,23 @@ const db = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+// const http = require("http").createServer(app);
+// const io = require("socket.io")(http);
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
 });
+
+// io.on("connection", (socket) => {
+//   socket.on("message", ({ name, message }) => {
+//     io.emit("message", { name, message });
+//   });
+// });
+// http.listen(3000, function () {
+//   console.log("listening on port 3000");
+// });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
