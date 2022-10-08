@@ -6,13 +6,10 @@ import Login from "../pages/Login";
 import Auth from "../utils/auth";
 
 export default function Main() {
-
   if (Auth.loggedIn()) {
     return (
-      <div
-        style={{ border: "1px solid red", height: "700px", display: "flex" }}
-      >
-        <Chatbox />
+      <div style={{ height: "100%", display: "flex" }}>
+        <Chatbox style={{ backgoundColor: "#223344" }} />
         <Subject />
       </div>
     );
@@ -24,5 +21,4 @@ export default function Main() {
       </div>
     );
   }
-
 }

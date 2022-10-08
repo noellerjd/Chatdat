@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
+import "../App.css";
 
 export default function Chatbox() {
   const [state, setState] = useState({ message: "", name: "" });
@@ -34,7 +35,7 @@ export default function Chatbox() {
   };
 
   return (
-    <div style={{ border: "1px solid blue", width: "30%", height: "100%" }}>
+    <div id="chatBox" style={{ width: "30%", height: "100%" }}>
       <form onSubmit={onMessageSubmit}>
         <h1>Messenger</h1>
         <div>
