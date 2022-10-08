@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
+import "../App.css";
 
 import {
   Card,
@@ -35,7 +36,7 @@ export default function Subject() {
   }, []);
 
   return (
-    <Grid container sx={{ flexGrow: 1 }}>
+    <Grid container id="cardContainer" sx={{ flexGrow: 1 }}>
       {searchResult.slice(0, 8).map((result) => {
         return (
           <Card
@@ -48,6 +49,7 @@ export default function Subject() {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "space-between",
+              background: "#232323",
             }}
           >
             <CardMedia
@@ -60,7 +62,12 @@ export default function Subject() {
               image={javascriptBubble}
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+              <Typography
+                style={{ color: "#ead352" }}
+                gutterBottom
+                variant="h5"
+                component="div"
+              >
                 {result.data.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">

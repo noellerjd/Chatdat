@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+body {
+  background-color: #112233;
+}
 
 .App-logo {
   height: 40vmin;
@@ -36,3 +39,8 @@
     transform: rotate(360deg);
   }
 }
+
+#cardContainer {
+  background: #112233;
+}
+
