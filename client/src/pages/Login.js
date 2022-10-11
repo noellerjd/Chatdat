@@ -33,12 +33,14 @@ const Login = (props) => {
 
   return (
     // add the html for the front end desgin of the login page
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
+    <div className="signIn-Card">
+      <Link className="link-text" to="/signup">
+        ← Go to Signup
+      </Link>
 
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
+      <h2 className="signup-text">Login</h2>
+      <form className="signin-form" onSubmit={handleFormSubmit}>
+        <div>
           <label htmlFor="email">Email address:</label>
           <input
             placeholder="youremail@test.com"
@@ -48,7 +50,7 @@ const Login = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div>
           <label htmlFor="pwd">Password:</label>
           <input
             placeholder="******"
@@ -60,10 +62,10 @@ const Login = (props) => {
         </div>
         {error ? (
           <div>
-            <p className="error-text">Incorrect Password or Username</p>
+            <p>Incorrect Password or Username</p>
           </div>
         ) : null}
-        <div className="flex-row flex-end">
+        <div className="signup-button">
           <button type="submit">Submit</button>
         </div>
       </form>
