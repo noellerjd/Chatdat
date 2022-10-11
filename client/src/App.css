@@ -1,13 +1,125 @@
+/* theme root */
+:root {
+  --black: #232323;
+  --yellow: #ead352;
+  --green: #829e46;
+  --blue: #112233;
+  --white: #f3f3f3;
+}
+
 .App {
   text-align: center;
 }
 body {
-  background-color: #112233;
+  background-color: var(--blue);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  margin-right: 30px;
+}
+.nav-links a {
+  text-decoration: none;
+  font-size: x-large;
+  padding: 30px;
+  color: var(--green);
+  transition: ease all 0.3s;
+}
+.nav-links a:hover {
+  color: #ead352;
+}
+.home-link {
+  visibility: hidden;
+}
+/* contact page */
+.contact-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 60px;
+}
+
+.contact-card {
+  background-color: var(--black);
+  margin-top: 30px;
+  border-radius: 30px;
+  color: var(--green);
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.302);
+}
+
+.contact-inner {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+}
+
+.contact-inner h1 {
+  transition: ease all 0.3s;
+  cursor: default;
+}
+
+.contact-inner h1:hover {
+  color: var(--yellow);
+}
+
+.contact-img {
+  width: 260px;
+  height: 260px;
+  background-color: var(--green);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.583);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact-links img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: var(--green);
+  transition: ease all 0.2s;
+}
+
+.contact-links img:hover {
+  background-color: var(--yellow);
+}
+
+@media screen and (max-width: 758px) {
+  .Logo {
+    display: none;
+  }
+  .header {
+    justify-content: space-evenly;
+  }
+  .nav-links {
+    margin-right: 0px;
+  }
+  .nav-links a {
+    font-size: medium;
+    padding: 10px;
+  }
+  .home-link {
+    visibility: visible;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -43,4 +155,3 @@ body {
 #cardContainer {
   background: #112233;
 }
-
