@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-
 import Auth from "../utils/auth";
 
 const Signup = (props) => {
@@ -36,9 +33,9 @@ const Signup = (props) => {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
+    <div className="signUp-Card">
+      <h2 className="signup-text">Signup</h2>
+      <form className="signup-form" onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -69,7 +66,7 @@ const Signup = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="signup-button">
           <button type="submit">Submit</button>
         </div>
       </form>
