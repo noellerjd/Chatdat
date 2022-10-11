@@ -41,7 +41,7 @@ export default function Chatbox() {
         <div>
           <input
             name="name"
-            onchange={(e) => onTextChange(e)}
+            onChange={(e) => onTextChange(e)}
             value={state.name}
             label="name'"
           />
@@ -49,7 +49,7 @@ export default function Chatbox() {
         <div>
           <input
             name="message"
-            onchange={(e) => onTextChange(e)}
+            onChange={(e) => onTextChange(e)}
             value={state.message}
             label="message"
           />
