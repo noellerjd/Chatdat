@@ -7,13 +7,22 @@
   --white: #f3f3f3;
 }
 
+.App {
+  text-align: center;
+}
+=========
 
 body {
   background-color: var(--blue);
 }
 
+
 #cardContainer {
   background: #112233;
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
 /* Header */
@@ -127,26 +136,30 @@ body {
 #xmark {
   color: red;
   font-size: 28px;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#checkmark {
+ color: green;
+ font-size: 32px;
+}
+
+#xmark {
+  color: red;
+  font-size: 28px;
+}
+
+#button-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  
 }
 
 #chatDat {
   margin-bottom: 5px
 }
+
 
 #button-container {
   display: flex;
@@ -154,3 +167,4 @@ body {
   justify-content: center;
   align-items: center;
 }
+
