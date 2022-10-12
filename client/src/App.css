@@ -154,13 +154,11 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  
 }
 
 #chatDat {
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
-
 
 #button-container {
   display: flex;
@@ -169,3 +167,50 @@ body {
   align-items: center;
 }
 
+.signUp-Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green);
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.signIn-Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green);
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 5%;
+}
+
+.signup-text {
+  font-size: 50px;
+  color: var(--white);
+}
+
+.link-text {
+  font-size: 20px;
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.signin-form {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.signup-form {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.signup-button {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
