@@ -11,12 +11,22 @@ import {
   Button,
   Typography,
   CardMedia,
+  cardMediaClasses,
 } from "@mui/material/";
+
 import javascriptBubble from "./images/javascript.png";
 import expressBubble from "./images/express.png";
 import mongoDbBubble from "./images/mongodb.png";
 import nodeJsBubble from "./images/nodejs.png";
 import reactBubble from "./images/react.png";
+
+const imageMap = {
+  learnjavascript: javascriptBubble,
+  reactjs: reactBubble,
+  expressjs: expressBubble,
+  mongodb: mongoDbBubble,
+  node: nodeJsBubble,
+};
 
 export default function Subject() {
   const [searchResult, setSearchResult] = useState([]);
@@ -48,19 +58,11 @@ export default function Subject() {
     }
     setSearchResult(randomResults);
   };
+
   useEffect(() => {
     search();
   }, []);
 
-  // const sorted = aggregateResults
-  //   .map((item) => {
-  //     console.log(item);
-  //     return item;
-  //   })
-
-  //   .slice(0, 8);
-  // console.log(sorted);
-  console.log(searchResult);
   if (!searchResult.length) {
     return <>No Results</>;
   }
@@ -88,7 +90,7 @@ export default function Subject() {
               component="img"
               alt="javascript"
               height="auto"
-              image={javascriptBubble}
+              image={imageMap[result.subreddit]}
             />
             <CardContent>
               <Typography
