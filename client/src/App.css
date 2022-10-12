@@ -87,11 +87,21 @@ body {
   border-radius: 50%;
   padding: 10px;
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.583);
+  transition: ease all 0.3s;
+}
+
+.contact-img:hover {
+  background-color: var(--yellow);
 }
 
 .contact-links {
   display: flex;
   justify-content: space-evenly;
+  /* background-color: var(--yellow); */
+  box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.583);
+  border: solid 1px rgba(0, 0, 0, 0.583);
+  border-radius: 25px;
+  margin: 30px;
 }
 
 .contact-links img {
@@ -99,12 +109,12 @@ body {
   height: 60px;
   border-radius: 50%;
   padding: 3px;
-  background-color: var(--green);
+  background-color: var(--yellow);
   transition: ease all 0.2s;
 }
 
 .contact-links img:hover {
-  background-color: var(--yellow);
+  background-color: var(--green);
 }
 
 @media screen and (max-width: 758px) {
