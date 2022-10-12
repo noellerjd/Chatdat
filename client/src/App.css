@@ -10,7 +10,7 @@
 .App {
   text-align: center;
 }
-=========
+
 
 body {
   background-color: var(--blue);
@@ -18,7 +18,8 @@ body {
 
 
 #cardContainer {
-  background: #112233;
+  background: #112233
+}
 
 .App-logo {
   height: 40vmin;

@@ -40,6 +40,7 @@ export default function Subject() {
       .reduce((acc, val) => acc.concat(val), []);
 
     const randomResults = [];
+    console.log(randomResults);
 
     for (let i = 0; i < 10; i++) {
       randomResults.push(
@@ -47,20 +48,66 @@ export default function Subject() {
       );
     }
     setSearchResult(randomResults);
+    console.log(randomResults);
   };
+
+  const render = () => {
+    for (let i = 0; i < searchResult.length; i++) {
+      // console.log(searchResult[i].subreddit);
+      let cardMedia = "";
+      if (searchResult[i].subreddit === "learnjavascript") {
+        cardMedia = `<CardMedia
+            xs={6}
+            md={8}
+            component="img"
+            alt="javascript"
+            height="auto"
+            image={javascriptBubble}
+          />`;
+      } else if (searchResult[i].subreddit === "reactjs") {
+        cardMedia = `<CardMedia
+            xs={6}
+            md={8}
+            component="img"
+            alt="reactJS"
+            height="auto"
+            image={reactBubble}
+          />`;
+      } else if (searchResult[i].subreddit === "expressjs") {
+        cardMedia = `<CardMedia
+            xs={6}
+            md={8}
+            component="img"
+            alt="expressJs"
+            height="auto"
+            image={expressBubble}
+          />`;
+      } else if (searchResult[i].subreddit === "node") {
+        cardMedia = `<CardMedia
+            xs={6}
+            md={8}
+            component="img"
+            alt="nodejs"
+            height="auto"
+            image={nodeJsBubble}
+          />`;
+      } else {
+        cardMedia = `<CardMedia
+            xs={6}
+            md={8}
+            component="img"
+            alt="MongoDb"
+            height="auto"
+            image={mongoDbBubble}
+          />`;
+      }
+    }
+  };
+
   useEffect(() => {
     search();
   }, []);
 
-  // const sorted = aggregateResults
-  //   .map((item) => {
-  //     console.log(item);
-  //     return item;
-  //   })
-
-  //   .slice(0, 8);
-  // console.log(sorted);
-  console.log(searchResult);
   if (!searchResult.length) {
     return <>No Results</>;
   }
@@ -82,14 +129,7 @@ export default function Subject() {
               background: "#232323",
             }}
           >
-            <CardMedia
-              xs={6}
-              md={8}
-              component="img"
-              alt="javascript"
-              height="auto"
-              image={javascriptBubble}
-            />
+            {render()}
             <CardContent>
               <Typography
                 style={{ color: "#ead352" }}
