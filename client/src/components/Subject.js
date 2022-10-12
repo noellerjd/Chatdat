@@ -11,12 +11,22 @@ import {
   Button,
   Typography,
   CardMedia,
+  cardMediaClasses,
 } from "@mui/material/";
+
 import javascriptBubble from "./images/javascript.png";
 import expressBubble from "./images/express.png";
 import mongoDbBubble from "./images/mongodb.png";
 import nodeJsBubble from "./images/nodejs.png";
 import reactBubble from "./images/react.png";
+
+const imageMap = {
+  learnjavascript: javascriptBubble,
+  reactjs: reactBubble,
+  expressjs: expressBubble,
+  mongodb: mongoDbBubble,
+  node: nodeJsBubble,
+};
 
 export default function Subject() {
   const [searchResult, setSearchResult] = useState([]);
@@ -40,7 +50,6 @@ export default function Subject() {
       .reduce((acc, val) => acc.concat(val), []);
 
     const randomResults = [];
-    console.log(randomResults);
 
     for (let i = 0; i < 10; i++) {
       randomResults.push(
@@ -48,60 +57,6 @@ export default function Subject() {
       );
     }
     setSearchResult(randomResults);
-    console.log(randomResults);
-  };
-
-  const render = () => {
-    for (let i = 0; i < searchResult.length; i++) {
-      // console.log(searchResult[i].subreddit);
-      let cardMedia = "";
-      if (searchResult[i].subreddit === "learnjavascript") {
-        cardMedia = `<CardMedia
-            xs={6}
-            md={8}
-            component="img"
-            alt="javascript"
-            height="auto"
-            image={javascriptBubble}
-          />`;
-      } else if (searchResult[i].subreddit === "reactjs") {
-        cardMedia = `<CardMedia
-            xs={6}
-            md={8}
-            component="img"
-            alt="reactJS"
-            height="auto"
-            image={reactBubble}
-          />`;
-      } else if (searchResult[i].subreddit === "expressjs") {
-        cardMedia = `<CardMedia
-            xs={6}
-            md={8}
-            component="img"
-            alt="expressJs"
-            height="auto"
-            image={expressBubble}
-          />`;
-      } else if (searchResult[i].subreddit === "node") {
-        cardMedia = `<CardMedia
-            xs={6}
-            md={8}
-            component="img"
-            alt="nodejs"
-            height="auto"
-            image={nodeJsBubble}
-          />`;
-      } else {
-        cardMedia = `<CardMedia
-            xs={6}
-            md={8}
-            component="img"
-            alt="MongoDb"
-            height="auto"
-            image={mongoDbBubble}
-          />`;
-      }
-    }
   };
 
   useEffect(() => {
@@ -129,7 +84,14 @@ export default function Subject() {
               background: "#232323",
             }}
           >
-            {render()}
+            <CardMedia
+              xs={6}
+              md={8}
+              component="img"
+              alt="javascript"
+              height="auto"
+              image={imageMap[result.subreddit]}
+            />
             <CardContent>
               <Typography
                 style={{ color: "#ead352" }}
