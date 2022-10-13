@@ -18,7 +18,6 @@ import expressBubble from "./images/express.png";
 import mongoDbBubble from "./images/mongodb.png";
 import nodeJsBubble from "./images/nodejs.png";
 import reactBubble from "./images/react.png";
-import { display } from "@mui/system";
 
 const imageMap = {
   learnjavascript: javascriptBubble,
@@ -51,7 +50,7 @@ export default function Subject() {
 
     const randomResults = [];
 
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 10; i++) {
       randomResults.push(
         aggregateResults[Math.floor(Math.random() * aggregateResults.length)]
       );
