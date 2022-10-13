@@ -34,9 +34,7 @@ const Login = (props) => {
   return (
     // add the html for the front end desgin of the login page
     <div className="signIn-Card">
-      <Link className="link-text" to="/signup">
-        ← Go to Signup
-      </Link>
+      <Link className="link-text" to="/signup"></Link>
 
       <h2 className="signup-text">Login</h2>
       <form className="signin-form" onSubmit={handleFormSubmit}>

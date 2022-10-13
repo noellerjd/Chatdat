@@ -14,6 +14,7 @@
 
 body {
   background-color: var(--blue);
+  min-height: 100vh;
 }
 
 
@@ -148,6 +149,7 @@ body {
   color: red;
   font-size: 28px;
 
+
 }
 
 #checkmark {
@@ -175,6 +177,96 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#resultCard {
+  border-radius: 25px;
+  width: 300px
+}
+
+#resultCard:hover {
+  box-shadow: 0px 2px 15px black ;
+}
+
+#cardImage {
+  height: 150px;
+  width: auto;;
+}
+
+#card-title {
+  text-align: center;
+  text-decoration: none;
+  color: #ead352;
+}
+
+#card-title:hover {
+  color: #829e46;
+}
+
+#ChatContainer {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 45px;
+  margin-top: 45px;
+  margin-right: 25px;
+  
+  
+}
+
+.footer {
+  position: bottom;
+  bottom: 0;
+  width: 100%;
+  height: 55px;
+  background: #123;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  background: #232323;
+  color: #ead352;
+}
+
+#footerText {
+  text-align: center;
+}
+
+#chatHeader {
+  border-bottom: 2px solid #ead352;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  color: #ead352;
+}
+
+.outlined {
+  background-color: #f3f3f3 
+}
+
+#messageContainer {
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #232323;
+}
+
+#sendMessage {
+  margin-top: 10px;
+  font-size: 24px;
+  background-color: #232323;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  align-self: center;
+  color: #ead352;
+
+}
+
+#sendMessage:hover {
+  color:#829e46
 }
 
 .signUp-Card {
