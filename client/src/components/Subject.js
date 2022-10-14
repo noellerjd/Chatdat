@@ -65,7 +65,10 @@ export default function Subject() {
   if (!searchResult.length) {
     return <>No Results</>;
   }
-
+  const deleteBtn = (title) => {
+    const deleteItem = searchResult.filter((item) => item.title !== title);
+    setSearchResult(deleteItem);
+  };
   return (
     <Grid container id="cardContainer" sx={{ flexGrow: 1 }}>
       {searchResult.map((result, index) => {
@@ -117,7 +120,7 @@ export default function Subject() {
                   <Button size="large" key={result.title}>
                     <FontAwesomeIcon id="xmark" className="svg" icon={faX} />
                   </Button>
-                  <Button size="large">
+                  <Button size="large" onClick={() => deleteBtn(result.title)}>
                     <FontAwesomeIcon
                       id="checkmark"
                       className="svg"
