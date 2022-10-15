@@ -117,10 +117,10 @@ export default function Subject() {
                   Chat Dat?
                 </h3>
                 <CardActions>
-                  <Button size="large" key={result.title}>
+                  <Button size="large" onClick={() => deleteBtn(result.title)}>
                     <FontAwesomeIcon id="xmark" className="svg" icon={faX} />
                   </Button>
-                  <Button size="large" onClick={() => deleteBtn(result.title)}>
+                  <Button size="large">
                     <FontAwesomeIcon
                       id="checkmark"
                       className="svg"
